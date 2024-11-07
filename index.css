@@ -21,14 +21,6 @@ body {
   position: relative;
 }
 
-#drawer-container {
-  width: 40rem;
-  height: 100%;
-  position: fixed;
-  top: 0px;
-  left: calc(-40rem - 4rem);
-}
-
 .chilanka-regular {
   font-family: "Chilanka", cursive;
   font-weight: 400;
@@ -53,4 +45,13 @@ body {
 .scrollable-content {
   scrollbar-color: #e74c3c #7d3c98; /* Rouge pour la partie mobile, violet pour le fond */
   scrollbar-width: thin; /* Minceur de la scrollbar pour Firefox */
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 50%;
+  }
+  :root {
+    --drawer-width: 100%;
+  }
 }

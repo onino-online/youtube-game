@@ -87,6 +87,15 @@
   #drawer .close-btn:hover {
     background-color: var(--s-75); /* Couleur secondaire 75% pour effet hover */
   }
+
+  @media (max-width: 600px) {
+    #drawer-container {
+      width: 100%;
+    }
+    #drawer {
+      width: 100%;
+    }
+  }
 </style>
 
 <script>
@@ -132,7 +141,7 @@
   }
 
   function closeDrawer() {
-    document.getElementById("drawer").style.left = "-44rem";
+    document.getElementById("drawer").style.left = "-100%";
   }
 
   const items = [

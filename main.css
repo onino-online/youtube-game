@@ -25,6 +25,8 @@
   --rose: #fd79a8; /* Rose pour le texte et les effets */
   --rouge: #ff3366; /* Rouge pour le gradient et les lueurs */
   --violet: #9933ff; /* Violet pour le gradient */
+
+  --drawer-width: 40rem;
 }
 
 html {
@@ -176,6 +178,9 @@ button:active {
 }
 
 @media (max-width: 576px) {
+  :root {
+    --drawer-width: 100vw;
+  }
   html {
     font-size: 37.5%;
   }

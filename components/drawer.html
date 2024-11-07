@@ -1,0 +1,181 @@
+<div id="drawer">
+  <button class="close-btn" onclick="closeDrawer()">Fermer</button>
+  <ul id="drawer-list"></ul>
+</div>
+
+<style>
+  /* Style du Drawer */
+  #drawer {
+    position: fixed;
+    top: 0;
+    left: calc(-40rem - 4rem);
+    width: 40rem;
+    height: 100%;
+    background-color: var(--p);
+    color: var(--t); /* Couleur du texte secondaire */
+    transition: left 0.3s ease; /* Animation lors de l'ouverture/fermeture */
+    z-index: 1000;
+    padding: 2rem; /* Utilisation de rem pour le padding */
+    box-shadow: 0.2rem 0 0.5rem rgba(0, 0, 0, 0.5); /* Légère ombre */
+  }
+
+  #drawer ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  #drawer h3 {
+    margin: 2rem 0 1rem;
+    font-size: 3rem;
+    color: var(--t); /* Utilisation de la couleur secondaire */
+  }
+
+  #drawer ul li {
+    padding: 1rem 0;
+    width: 100%;
+    height: 2rem;
+    line-height: 1.6rem;
+    cursor: pointer;
+    color: var(--rose); /* Couleur pour les liens */
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: "itim-regular", system-ui;
+    font-weight: smaller;
+    font-style: normal;
+  }
+  #drawer ul li:hover {
+    padding: 1rem 0;
+    width: 100%;
+    height: 2rem;
+    line-height: 1.6rem;
+    cursor: pointer;
+    color: var(--rouge); /* Couleur pour les liens */
+    text-decoration: none;
+    font-size: 2.5rem;
+    font-family: "itim-regular", system-ui;
+    font-weight: smaller;
+    font-style: normal;
+  }
+
+  #drawer .close-btn {
+    display: block;
+    background-color: var(--s); /* Couleur secondaire pour le bouton */
+    border: none;
+    color: var(--p); /* Texte en couleur primaire */
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.6rem;
+  }
+
+  #drawer .close-btn:hover {
+    background-color: var(--s-75); /* Couleur secondaire 75% pour effet hover */
+  }
+</style>
+
+<script>
+  // Fonction Drawer avec catégories
+  function Drawer(items) {
+    const drawerList = document.getElementById("drawer-list");
+    drawerList.innerHTML = ""; // Efface la liste actuelle
+
+    // Organiser les éléments par catégories
+    const categories = {};
+    items.forEach((item) => {
+      if (!categories[item.categorie]) {
+        categories[item.categorie] = [];
+      }
+      categories[item.categorie].push(item);
+    });
+
+    // Générer les catégories et les items dans le drawer
+    Object.keys(categories).forEach((categorie) => {
+      // Ajouter le titre de la catégorie
+      const categoryTitle = document.createElement("h3");
+      categoryTitle.textContent = categorie;
+      drawerList.appendChild(categoryTitle);
+
+      // Ajouter les items sous chaque catégorie
+      const itemList = document.createElement("ul");
+      categories[categorie].forEach((item) => {
+        const li = document.createElement("li");
+        li.innerText = item.titre;
+        li["data-path"] = item.path;
+        li.addEventListener("click", () => {
+          openFullscreenDrawer(li["data-path"]);
+        });
+        // li.appendChild(p);
+        itemList.appendChild(li);
+      });
+      drawerList.appendChild(itemList);
+    });
+  }
+
+  function openDrawer() {
+    document.getElementById("drawer").style.left = "0";
+  }
+
+  function closeDrawer() {
+    document.getElementById("drawer").style.left = "-44rem";
+  }
+
+  const items = [
+    {
+      path: "poems/angele",
+      titre: "T'oublier, toi, ton ta tes... tout",
+      categorie: "Arc - Musique",
+    },
+    {
+      path: "poems/bruno",
+      titre: "Burno l'ésseulé",
+      categorie: "Arc - Droitiste",
+    },
+    {
+      path: "poems/raptor",
+      titre: "Le rapeur dissipé",
+      categorie: "Arc - Droitiste",
+    },
+    {
+      path: "poems/valek",
+      titre: "Balek",
+      categorie: "Arc - Droitiste",
+    },
+    {
+      path: "poems/papacito",
+      titre: "Pas de si tôt",
+      categorie: "Arc - Droitiste",
+    },
+    {
+      path: "poems/stephane-edouard",
+      titre: "Saitphâde Tainouard",
+      categorie: "Arc - Droitiste",
+    },
+    {
+      path: "poems/home",
+      titre: "Les joueurs de graviers",
+      categorie: "Arc - Diversion",
+    },
+    {
+      path: "poems/home",
+      titre: "Lhère covarant",
+      categorie: "Arc - Scientifique",
+    },
+    {
+      path: "poems/home",
+      titre: "Accueil",
+      categorie: "Arc - WTF",
+    },
+    {
+      path: "poems/home",
+      titre: "Accueil",
+      categorie: "Arc - WTF",
+    },
+    {
+      path: "poems/home",
+      titre: "Accueil",
+      categorie: "Arc - Sportif",
+    },
+  ];
+
+  Drawer(items);
+</script>

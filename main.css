@@ -1,0 +1,182 @@
+/* Variables de couleurs */
+:root {
+  /* Couleurs principales */
+  --p-50: #6a4b7b; /* Primary 50% */
+  --p-75: #533964; /* Primary 75% */
+  --p: #3e2550; /* Primary - fond violet sombre */
+  --p-125: #2d1a3c; /* Primary 125% */
+  --p-150: #1b0f27; /* Primary 150% */
+
+  /* Couleurs secondaires */
+  --s-50: #cc99ff; /* Secondary 50% */
+  --s-75: #b266ff; /* Secondary 75% */
+  --s: #9933ff; /* Secondary - accents violets */
+  --s-125: #7f29cc; /* Secondary 125% */
+  --s-150: #661f99; /* Secondary 150% */
+
+  /* Couleurs tertiaires */
+  --t-50: #d9b3e6; /* Tertiary 50% */
+  --t-75: #c299d9; /* Tertiary 75% */
+  --t: #a366cc; /* Tertiary - couleur pour les titres */
+  --t-125: #8a4db2; /* Tertiary 125% */
+  --t-150: #703399; /* Tertiary 150% */
+
+  /* Couleurs spécifiques ajoutées */
+  --rose: #fd79a8; /* Rose pour le texte et les effets */
+  --rouge: #ff3366; /* Rouge pour le gradient et les lueurs */
+  --violet: #9933ff; /* Violet pour le gradient */
+}
+
+html {
+  font-size: 62.5%; /* Définit 1rem à 10px au lieu de 16px */
+}
+
+/* Corps du document */
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: var(--fs);
+  color: #ffffff; /* Texte blanc pour ressortir sur le fond sombre */
+  background-color: var(
+    --p-150
+  ); /* Utilisation de la couleur principale sombre */
+  line-height: 1.6;
+  display: grid;
+  justify-items: center;
+}
+
+/* Titres */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--t); /* Couleur tertiaire pour les titres */
+  margin-bottom: var(--sp-m);
+  font-weight: bold;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+h2 {
+  font-size: var(--fs-h2);
+}
+h3 {
+  font-size: var(--fs-h3);
+}
+h4 {
+  font-size: var(--fs-h4);
+}
+h5 {
+  font-size: var(--fs-h5);
+}
+h6 {
+  font-size: var(--fs-h6);
+}
+
+/* Effets de lueur et gradient pour les titres */
+h1::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  background: linear-gradient(
+    90deg,
+    var(--s),
+    #ff3366
+  ); /* Gradient du violet vers rouge */
+  filter: blur(20px); /* Lueur floue */
+  z-index: -1;
+  opacity: 0.7; /* Légère transparence */
+}
+
+h1:hover::before {
+  filter: blur(30px); /* Accentuer l'effet au survol */
+}
+
+h1:hover {
+  color: #ff3366; /* Change la couleur du texte en rouge lors du survol */
+}
+
+/* Styles des boutons */
+button {
+  font-size: 1.5rem; /* Plus grand */
+  padding: 1.5rem 4rem; /* Augmenter la taille du bouton */
+  border: 0.3rem solid transparent; /* Bordure transparente pour le dégradé */
+  border-radius: var(--br); /* Bordure arrondie */
+  background: none; /* Pas de fond */
+  color: #fd79a8; /* Couleur du texte du bouton */
+  cursor: pointer;
+  position: relative; /* Nécessaire pour la lueur */
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  border-radius: var(--br); /* Même courbure que le bouton */
+  background: linear-gradient(
+    90deg,
+    var(--s),
+    #ff3366
+  ); /* Gradient violet vers rouge */
+  z-index: -1;
+  filter: blur(15px); /* Lueur floue */
+  opacity: 0.7; /* Légère transparence pour la lueur */
+}
+
+button:hover::before {
+  filter: blur(25px); /* Accentuer l'effet de lueur au survol */
+}
+
+button:hover {
+  color: #ff3366; /* Change la couleur du texte en rouge lors du survol */
+  border-color: var(--s); /* Utilisation de la couleur secondaire */
+}
+
+/* Effet de clic */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Styles de texte avec lueur */
+.ligne-ola span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  color: #fd79a8; /* Couleur des éléments avec effets de lueur */
+  text-shadow: 0 0 10px #fd79a8, 0 0 20px #e84393;
+}
+
+/* Média Queries */
+@media (max-width: 1200px) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 43.75%;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 37.5%;
+  }
+}

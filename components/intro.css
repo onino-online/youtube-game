@@ -1,0 +1,227 @@
+section {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  column-gap: 4rem;
+}
+
+img,
+.yt-logo {
+  width: 700px;
+  height: auto;
+}
+
+h1 {
+  width: 70rem;
+  text-align: center;
+  font-size: 4rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  position: relative;
+  color: #ffffff;
+  margin-bottom: var(--sp-l);
+  background: none;
+  letter-spacing: 0.2rem; /* Espacement pour donner un effet moderne */
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  padding-top: 0rem;
+}
+
+h1::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem; /* Lueur autour du titre */
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  background: linear-gradient(
+    90deg,
+    #9933ff,
+    #ff3366
+  ); /* Gradient violet vers rouge */
+  filter: blur(20px); /* Lueur floue */
+  z-index: -1;
+  opacity: 0.7; /* Légère transparence */
+}
+
+h1:hover::before {
+  filter: blur(30px); /* Accentuer l'effet au survol */
+}
+
+h1:hover {
+  color: #ff3366; /* Change la couleur du texte en rouge lors du survol */
+}
+
+.ligne-ola span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  color: #fd79a8;
+  text-shadow: 0 0 10px #fd79a8, 0 0 20px #e84393;
+}
+
+/* Styles pour le h2 doré avec effet de brillance */
+h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #d4af37; /* Couleur or */
+  background: linear-gradient(
+    90deg,
+    #b8860b,
+    #ffd700,
+    #ffffff,
+    #ffd700,
+    #b8860b
+  ); /* Gradient or avec une fine couche blanche */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  position: relative;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  animation: shine 7s infinite;
+  background-size: 300%;
+}
+
+/* Animation de brillance */
+@keyframes shine {
+  0% {
+    background-position: -200%;
+  }
+  100% {
+    background-position: 200%;
+  }
+}
+
+/* Animation pour la lueur */
+@keyframes glow {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}
+
+/* Styles des boutons */
+button {
+  font-size: 2.5rem; /* Plus grand */
+  padding: 1rem 4rem; /* Augmenter la taille du bouton */
+  border: 0.3rem solid transparent; /* Bordure transparente pour le dégradé */
+  border-radius: var(--br); /* Bordure arrondie */
+  background: none; /* Pas de fond */
+  color: #fd79a8; /* Texte blanc */
+  cursor: pointer;
+  position: relative; /* Nécessaire pour la lueur */
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  top: -0.5rem; /* Créer l'effet de lueur autour du bouton */
+  left: -0.5rem;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  border-radius: var(--br); /* Même courbure que le bouton */
+  background: linear-gradient(
+    90deg,
+    #9933ff,
+    #ff3366
+  ); /* Gradient violet vers rouge */
+  z-index: -1;
+  filter: blur(15px); /* Lueur floue */
+  opacity: 0.7; /* Légère transparence pour la lueur */
+}
+
+button:hover::before {
+  filter: blur(25px); /* Accentuer l'effet au survol */
+}
+
+button:hover {
+  color: #ff3366; /* Change la couleur du texte en rouge lors du survol */
+  border-color: #9933ff; /* Gradient dans la bordure */
+}
+
+button:active {
+  transform: scale(
+    0.98
+  ); /* Légère réduction à l'activation pour un effet de clic */
+}
+
+.viga-regular {
+  font-family: "Viga", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.knewave-regular {
+  font-family: "Knewave", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.rubik-wet-paint-regular {
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.itim-regular {
+  font-family: "Itim", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@media only screen and (max-width: 600px) {
+  section {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-content: space-between;
+    align-items: space-between;
+    justify-content: center;
+    justify-items: center;
+  }
+  h1 {
+    width: 100%;
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  .buttons {
+    /* padding-bottom: 1rem; */
+    display: grid;
+    grid-template-columns: 1fr;
+    row-gap: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  img,
+  .yt-logo {
+    width: 100%;
+    height: auto;
+  }
+}

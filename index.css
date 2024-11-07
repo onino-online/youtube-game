@@ -18,15 +18,39 @@ body {
   overflow: hidden;
   padding: 0;
   margin: 0;
+  position: relative;
 }
 
-.intro-container {
-  width: 100%;
+#drawer-container {
+  width: 40rem;
   height: 100%;
+  position: fixed;
+  top: 0px;
+  left: calc(-40rem - 4rem);
 }
 
 .chilanka-regular {
   font-family: "Chilanka", cursive;
   font-weight: 400;
   font-style: normal;
+}
+/* Style pour la barre de défilement */
+::-webkit-scrollbar {
+  width: 12px; /* Largeur de la scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #7d3c98; /* Couleur de fond de la scrollbar en violet */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e74c3c; /* Rouge pour la partie mobile de la scrollbar */
+  border-radius: 6px; /* Arrondir les coins de la scrollbar */
+  /* border: 3px solid #ffffff;  */
+}
+
+/* Support pour Firefox */
+.scrollable-content {
+  scrollbar-color: #e74c3c #7d3c98; /* Rouge pour la partie mobile, violet pour le fond */
+  scrollbar-width: thin; /* Minceur de la scrollbar pour Firefox */
 }

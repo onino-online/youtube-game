@@ -34,8 +34,6 @@ window.loadHTML = (id, path) => {
     .then((response) => response.text())
     .then((html) => {
       const content = document.getElementById(id);
-      console.log("is it", id, content);
-
       // Injecter le HTML dans le div #content
       content.innerHTML = html;
     })

@@ -1,9 +1,24 @@
 <div id="drawer">
-  <button class="close-btn" onclick="closeDrawer()">Fermer</button>
-  <ul id="drawer-list"></ul>
+  <button class="close-btn" onclick="closeDrawer()">Fermez là</button>
+  <div id="list">
+    <ul id="drawer-list"></ul>
+  </div>
 </div>
 
 <style>
+  #drawer-container {
+    width: 40rem;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: calc(-40rem - 4rem);
+  }
+  #list {
+    padding: 2rem;
+    overflow-y: scroll;
+    height: 100%;
+    display: grid;
+  }
   /* Style du Drawer */
   #drawer {
     position: fixed;
@@ -15,7 +30,6 @@
     color: var(--t); /* Couleur du texte secondaire */
     transition: left 0.3s ease; /* Animation lors de l'ouverture/fermeture */
     z-index: 1000;
-    padding: 2rem; /* Utilisation de rem pour le padding */
     box-shadow: 0.2rem 0 0.5rem rgba(0, 0, 0, 0.5); /* Légère ombre */
   }
 
@@ -26,8 +40,10 @@
 
   #drawer h3 {
     margin: 2rem 0 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     color: var(--t); /* Utilisation de la couleur secondaire */
+    font-weight: 200;
+    letter-spacing: 3px;
   }
 
   #drawer ul li {
@@ -65,7 +81,7 @@
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 
   #drawer .close-btn:hover {
@@ -151,29 +167,80 @@
       categorie: "Arc - Droitiste",
     },
     {
-      path: "poems/home",
-      titre: "Les joueurs de graviers",
-      categorie: "Arc - Diversion",
+      path: "poems/psykodeklik",
+      titre: "psyKodeKliK",
+      categorie: "Arc - Soidicentre",
     },
     {
-      path: "poems/home",
-      titre: "Lhère covarant",
+      path: "poems/anesthesie",
+      titre: "anesthtesie",
+      categorie: "Arc - Gauchiard",
+    },
+    {
+      path: "poems/banana",
+      titre: "banana.S",
+      categorie: "Arc - Gauchiard",
+    },
+    {
+      path: "poems/bouseux",
+      titre: "LE Bouseux",
+      categorie: "Arc - Gauchiard",
+    },
+    {
+      path: "poems/malade",
+      titre: "Malade Bancale",
       categorie: "Arc - Scientifique",
     },
     {
-      path: "poems/home",
-      titre: "Accueil",
-      categorie: "Arc - WTF",
+      path: "poems/lait",
+      titre: "Science 4 temps",
+      categorie: "Arc - Scientifique",
+    },
+
+    {
+      path: "poems/reboucle",
+      titre: "Science efféminée",
+      categorie: "Arc - Scientifique",
     },
     {
-      path: "poems/home",
-      titre: "Accueil",
-      categorie: "Arc - WTF",
+      path: "poems/fapate",
+      titre: "Pass pas",
+      categorie: "Arc - Scientifique",
     },
     {
-      path: "poems/home",
-      titre: "Accueil",
+      path: "poems/gravier",
+      titre: "Joueur de gravier",
+      categorie: "Arc - diverstissement",
+    },
+    {
+      path: "poems/greg",
+      titre: "Greg maimera",
       categorie: "Arc - Sportif",
+    },
+    {
+      path: "poems/louis",
+      titre: "Saint Louis",
+      categorie: "Arc - WTF",
+    },
+    {
+      path: "poems/tevex",
+      titre: "TeVeX",
+      categorie: "Arc - WTF",
+    },
+    {
+      path: "poems/mojo",
+      titre: "mojo",
+      categorie: "Arc - WTF",
+    },
+    {
+      path: "poems/Athena",
+      titre: "Athena",
+      categorie: "Arc - Langue",
+    },
+    {
+      path: "poems/juseplus",
+      titre: "juséplus",
+      categorie: "Arc - Langue",
     },
   ];
 

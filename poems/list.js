@@ -16,4 +16,5 @@ const poems = [
     categorie: "droitiste",
   },
   { path: "poems/kroc-blanc", titre: "Trop Blanc", categorie: "droitiste" },
+  { path: "poems/kroc-blanc", titre: "Trop Blanc", categorie: "scoidicentre" },
 ];

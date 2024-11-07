@@ -164,6 +164,15 @@ button:active {
   ); /* Légère réduction à l'activation pour un effet de clic */
 }
 
+.yt-logo {
+  cursor: pointer;
+}
+
+.yt-logo:hover {
+  transition: transform 0.5s ease;
+  transform: scale(1.05);
+}
+
 .viga-regular {
   font-family: "Viga", sans-serif;
   font-weight: 400;

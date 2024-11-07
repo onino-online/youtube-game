@@ -1,9 +1,7 @@
-<link rel="stylesheet" href="components/fullscreen-drawer.css" />
-
 <div id="fullscreen-drawer">
   <div id="fullscreen-drawer-content"></div>
   <button class="close-fullscreen-btn" onclick="closeFullscreenDrawer()">
-    Fermer
+    A tout jamais
   </button>
 </div>
 
@@ -23,6 +21,7 @@
     flex-direction: column;
     justify-content: flex-end; /* Bouton en bas de l'écran */
   }
+
   #fullscreen-drawer-content {
     width: 100%;
     height: 100%;
@@ -48,12 +47,12 @@
   .close-fullscreen-btn {
     background-color: var(--s); /* Couleur secondaire pour le bouton */
     border: none;
-    color: var(--p); /* Texte en couleur primaire */
+    color: white; /* Texte en couleur primaire */
     padding: 1.5rem;
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .close-fullscreen-btn:hover {

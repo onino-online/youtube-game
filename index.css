@@ -51,7 +51,4 @@ body {
   html {
     font-size: 50%;
   }
-  :root {
-    --drawer-width: 100%;
-  }
 }

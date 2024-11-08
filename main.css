@@ -185,3 +185,27 @@ button:active {
     font-size: 37.5%;
   }
 }
+
+/* Désactive l'effet de focus pour les éléments interactifs */
+* {
+  -webkit-tap-highlight-color: transparent; /* Supprime le surlignage bleu sur iOS et Android */
+  outline: none; /* Supprime le contour (focus) par défaut */
+}
+
+/* Désactive les bordures pour les boutons et les liens */
+button,
+a {
+  border: none;
+  outline: none;
+}
+
+/* Supprime les ombrages et bordures sur les navigateurs mobiles */
+input,
+textarea,
+button,
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none;
+}

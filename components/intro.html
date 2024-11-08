@@ -13,6 +13,7 @@
     src="../assets/yt-logo-2.webp"
     alt="Logo Youtube Game"
   />
+  <audio id="audioPlayer" src="assets/vegeta.mp3"></audio>
 
   <div class="buttons">
     <button class="button knewave-regular" onclick="depasse()">
@@ -53,12 +54,52 @@
             span.style.transform = "translateY(-10px)";
           }, index * 100); // Décalage progressif pour l'effet de vague
 
-          // Retour à la position d'origine
           setTimeout(() => {
             span.style.transform = "translateY(0)";
           }, index * 100 + 300);
-        }, 2000); // Durée totale de la vague avant redémarrage
+        }, 2000);
       });
+    });
+  </script>
+  <script>
+    const playImage = document.getElementById("yt-logo");
+    const audioPlayer = document.getElementById("audioPlayer");
+    let isPlaying = false;
+
+    // Fonction pour basculer lecture/pause
+    function toggleAudio() {
+      if (!isPlaying) {
+        // Si la musique n'a jamais été jouée, démarre la lecture
+        audioPlayer.play();
+        isPlaying = true;
+      } else {
+        // Basculer entre lecture et pause
+        if (audioPlayer.paused) {
+          audioPlayer.play();
+        } else {
+          audioPlayer.pause();
+        }
+      }
+    }
+
+    // Lecture/pause quand on clique sur le logo
+    playImage.addEventListener("click", toggleAudio);
+
+    // Lecture/pause quand on appuie sur la touche Espace
+    document.addEventListener("keydown", (event) => {
+      if (event.code === "Space") {
+        event.preventDefault(); // Empêche le défilement de la page
+        toggleAudio();
+      }
+    });
+
+    // Mettre à jour l'état lorsque la musique est jouée ou mise en pause
+    audioPlayer.addEventListener("play", () => {
+      isPlaying = true;
+    });
+
+    audioPlayer.addEventListener("pause", () => {
+      isPlaying = false;
     });
   </script>
 </section>

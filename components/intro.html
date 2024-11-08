@@ -10,10 +10,11 @@
   <img
     id="yt-logo"
     class="yt-logo"
-    src="../assets/yt-logo-2.webp"
+    src="../assets/yt-logo-play.webp"
     alt="Logo Youtube Game"
   />
   <audio id="audioPlayer" src="assets/vegeta.mp3"></audio>
+  <audio id="audioEffect" src="assets/collective.mp3"></audio>
 
   <div class="buttons">
     <button class="button knewave-regular" onclick="depasse()">
@@ -30,6 +31,7 @@
   <script>
     function depasse() {
       openDrawer();
+      audioEffect.play();
     }
 
     function navigate() {
@@ -68,6 +70,7 @@
 
     // Fonction pour basculer lecture/pause
     function toggleAudio() {
+      playImage.src = "assets/yt-logo-play.webp";
       if (!isPlaying) {
         // Si la musique n'a jamais été jouée, démarre la lecture
         audioPlayer.play();
@@ -77,6 +80,7 @@
         if (audioPlayer.paused) {
           audioPlayer.play();
         } else {
+          playImage.src = "assets/yt-logo-pause.webp";
           audioPlayer.pause();
         }
       }
